@@ -1,8 +1,12 @@
 .supraContainer {
   min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
+  min-width: 200vh;
   background: rgb(151, 141, 176);
   background: radial-gradient(
     circle,

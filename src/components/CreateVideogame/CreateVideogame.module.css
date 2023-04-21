@@ -2,9 +2,11 @@
   display: flex;
   min-height: 90vh;
   align-items: center;
+  justify-content: center;
 }
 
 .container {
+  min-width: 200vh;
   background: #dbd8e3;
   border: 2px solid black;
   margin: 30px;
