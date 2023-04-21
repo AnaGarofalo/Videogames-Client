@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.activePageButton {
+  all: unset;
+  background-color: #dbd8e3;
+  color: #2a2438;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.pageButton {
+  all: unset;
+  background-color: rgba(240, 248, 255, 0);
+  color: #dbd8e3;
+  padding: 15px;
+  cursor: pointer;
+  padding-top: 25px;
+}
+
+.pageButton:hover {
+  font-size: 30px;
+  padding: 10px;
+  text-shadow: 1px -1px 12px rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+.activePageButton:hover {
+  font-size: 30px;
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-shadow: 1px -1px 12px rgba(0, 0, 0, 1);
+  cursor: pointer;
+}

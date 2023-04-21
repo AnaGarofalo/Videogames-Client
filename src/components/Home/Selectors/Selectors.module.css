@@ -1,0 +1,90 @@
+.selectorContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.genreSelector {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.originSelector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.button {
+  all: unset;
+  margin: 0px;
+  color: #2a2438;
+  padding: 4.5px;
+  text-align: center;
+}
+.button:hover {
+  font-size: larger;
+  border: 2px solid #2a2438;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.activeButton {
+  all: unset;
+  text-align: center;
+  background-color: #5c5470;
+  color: #dbd8e3;
+  padding: 4.5px;
+}
+
+.activeButton:hover {
+  font-size: larger;
+  border: 2px solid #2a2438;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.originButton {
+  all: unset;
+  margin: 0px;
+  color: #2a2438;
+  padding: 5px;
+  text-align: center;
+}
+.originButton:hover {
+  font-size: larger;
+  padding: 0px;
+  border: 2px solid #2a2438;
+  margin: 0px;
+  margin-right: -3px;
+  cursor: pointer;
+}
+
+.activeOriginButton {
+  all: unset;
+  padding: 7px;
+  text-align: center;
+  background-color: #5c5470;
+  color: #dbd8e3;
+}
+.activeOriginButton:hover {
+  font-size: larger;
+  border: 2px solid #2a2438;
+  cursor: pointer;
+  padding: 2.5px;
+  padding-right: 5px;
+}
+
+.separator {
+  border: 1px solid #2a2438;
+  width: 15em;
+  padding: 0px;
+  margin: 0px;
+}
+
+.miniSeparator {
+  border: 0.3px solid #5c5470;
+  width: 15em;
+  padding: 0px;
+  margin: 0px;
+}

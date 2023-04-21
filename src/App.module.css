@@ -1,0 +1,62 @@
+.landingPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+  background-image: url("./utils/fondo2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: bottom right;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 38.5em;
+
+  /* background: rgb(92, 84, 112);
+  background: radial-gradient(
+    circle,
+    rgba(92, 84, 112, 1) 0%,
+    rgba(0, 0, 0, 0.7987570028011204) 100%
+  ); */
+
+  background: linear-gradient(
+      163deg,
+      transparent 0px,
+      transparent 1px,
+      #222 1px,
+      #222 14px,
+      transparent 14px
+    ),
+    linear-gradient(
+      161deg,
+      transparent 0px,
+      #181818 1px,
+      #222 2px,
+      #222 15px,
+      transparent 15px
+    ),
+    linear-gradient(
+      343deg,
+      transparent 0px,
+      transparent 1px,
+      #222 1px,
+      #222 14px,
+      transparent 14px
+    ),
+    linear-gradient(
+      343deg,
+      transparent 0px,
+      transparent 1px,
+      #222 1px,
+      #222 14px,
+      transparent 14px
+    );
+  background-color: #121212;
+  background-position: 2px 1px, 23px 16px, 48px 15px, 21px 30px;
+  background-size: 48px 30px;
+}

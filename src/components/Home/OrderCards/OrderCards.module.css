@@ -1,0 +1,41 @@
+.selectorContainer {
+  display: flex;
+  flex-direction: column;
+  color: #2a2438;
+}
+
+.selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 5px;
+  align-items: center;
+}
+
+.orderSelector {
+  display: inline-block;
+  width: 90%;
+  cursor: pointer;
+  padding: 5px;
+  height: 30px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #7b7b7b;
+  font-size: 0.8em;
+  color: #999;
+  font-family: "Quicksand", sans-serif;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.25s ease;
+  margin: 3px;
+}
+
+.orderSelector:hover {
+  background: #2a2438;
+  color: #dbd8e3;
+  cursor: pointer;
+}

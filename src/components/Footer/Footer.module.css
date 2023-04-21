@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  background-color: #2a2438;
+  border: 1px solid black;
+}
+
+.image {
+  margin: 0px;
+  height: 30px;
+  margin: 5px;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.text {
+  color: #dbd8e3;
+  margin: 0px;
+}
+
+.image:hover {
+  height: 35px;
+  margin: 0px;
+  margin-left: 3em;
+  margin-right: 3em;
+  cursor: pointer;
+}

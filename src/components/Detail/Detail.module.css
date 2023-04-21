@@ -1,0 +1,66 @@
+.bigContainer {
+  display: flex;
+  flex-direction: column;
+  background: #dbd8e3;
+  border: 2px solid black;
+  margin: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+  box-shadow: -1px -1px 82px 5px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: -1px -1px 82px 5px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: -1px -1px 82px 5px rgba(255, 255, 255, 0.75);
+}
+
+.smallContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  align-items: center;
+}
+
+.imgContainer {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  margin: 30px;
+  position: relative;
+  border: 2px solid black;
+  border-radius: 300px;
+  margin-right: 50px;
+}
+.textContainer {
+  margin-left: 50px;
+  text-align: center;
+}
+
+.image {
+  position: absolute;
+  height: 15em;
+  left: -100%;
+  right: -100%;
+  top: -100%;
+  bottom: -100%;
+  margin: auto;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.icon {
+  height: 1.5em;
+  margin-bottom: -0.3em;
+  padding-bottom: 0px;
+}
+.text {
+  margin-bottom: 20px;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+
+.descriptionContainer {
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  text-align: justify;
+}

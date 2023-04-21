@@ -1,0 +1,36 @@
+.container {
+  background: rgb(151, 141, 176);
+  background: radial-gradient(
+    circle,
+    rgba(151, 141, 176, 0.5354516806722689) 0%,
+    rgba(0, 0, 0, 0.5914740896358543) 100%
+  );
+  margin: 30px;
+  min-height: 72vh;
+  border: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  all: unset;
+  background-color: black;
+  color: #dbd8e3;
+  font-size: large;
+  border-radius: 30px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.button:hover {
+  background-color: #dbd8e3;
+  color: #2a2438;
+  border: 2px solid #352f44;
+  cursor: pointer;
+  padding: 8px;
+  padding-left: 30px;
+  padding-right: 30px;
+}

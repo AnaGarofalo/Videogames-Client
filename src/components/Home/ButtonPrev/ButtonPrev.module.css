@@ -1,0 +1,19 @@
+.button {
+  background-color: rgba(240, 248, 255, 0);
+  border: 0px;
+}
+
+.button:hover .image {
+  width: 2em;
+  background-color: #dbd8e3;
+  padding: 5px;
+  border-radius: 40px;
+  border: 2px solid rgba(92, 84, 112, 1);
+  cursor: pointer;
+}
+.button:hover {
+  margin-right: 0px;
+}
+.hiddenButton {
+  visibility: hidden;
+}

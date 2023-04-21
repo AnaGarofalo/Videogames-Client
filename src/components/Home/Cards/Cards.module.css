@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-right: 0px;
+}
+
+.noGames {
+  color: #dbd8e3;
+  font-size: 3em;
+}

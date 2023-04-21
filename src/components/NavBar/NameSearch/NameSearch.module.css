@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.input {
+  all: unset;
+  background-color: black;
+  color: #dbd8e3;
+  font-size: large;
+  border-radius: 20px 0px 0px 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.input:hover {
+  background-color: #dbd8e3;
+  color: #2a2438;
+  border: 2px solid #352f44;
+  padding: 3px;
+  padding-left: 13px;
+}
+
+.button {
+  all: unset;
+  background-color: black;
+  color: #dbd8e3;
+  font-size: large;
+  padding: 10px;
+  border-radius: 30px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.darkImage {
+  display: none;
+}
+
+.button:hover {
+  background-color: #dbd8e3;
+  color: #2a2438;
+  border: 2px solid #352f44;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.button:hover .image {
+  display: none;
+}
+.button:hover .darkImage {
+  display: inline;
+}
