@@ -16,6 +16,7 @@
   );
   align-items: center;
   min-height: 85vh;
+  justify-content: stretch;
 }
 .cardsAndButtons {
   display: flex;
