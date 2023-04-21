@@ -28,7 +28,7 @@
   border: 2px solid #2a2438;
   padding: 0px;
   cursor: pointer;
-  min-height: 4.5vh;
+  min-height: 5.3vh;
 }
 
 .activeButton {
@@ -45,7 +45,7 @@
   border: 2px solid #2a2438;
   padding: 0px;
   cursor: pointer;
-  min-height: 4.5vh;
+  min-height: 5.3vh;
 }
 
 .originButton {
@@ -63,7 +63,7 @@
   margin: 0px;
   margin-right: -3px;
   cursor: pointer;
-  min-height: 4.5vh;
+  min-height: 5.3vh;
 }
 
 .activeOriginButton {
@@ -80,7 +80,7 @@
   cursor: pointer;
   padding: 2.5px;
   padding-right: 5px;
-  min-height: 4.5vh;
+  min-height: 5.3vh;
 }
 
 .separator {
