@@ -49,6 +49,26 @@ const validate = ({
 
   errors.rating = rating > 5 ? "Rating must be under 5" : errors.rating;
 
+  //checking date
+  if (!released) return errors;
+  const actualDate = new Date();
+  const [actualMonth, actualDay, actualYear] = [
+    actualDate.getMonth() + 1,
+    actualDate.getDate(),
+    actualDate.getFullYear(),
+  ];
+  const [gameDay, gameMonth, gameYear] = [
+    Number(released.slice(8)),
+    Number(released.slice(5, 7)),
+    Number(released.slice(0, 4)),
+  ];
+  if (
+    gameYear > actualYear ||
+    (gameYear >= actualYear && gameMonth > actualMonth) ||
+    (gameYear >= actualYear && gameMonth >= actualMonth && gameDay > actualDay)
+  )
+    errors.released = "Release date must be a past date";
+
   return errors;
 };
 

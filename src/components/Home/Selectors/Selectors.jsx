@@ -50,7 +50,7 @@ const Selectors = ({ genres }) => {
         {genres.length
           ? genres.map((genre, index) => (
               <>
-                <hr className={style.miniSeparator} />
+                <hr key={index + 100} className={style.miniSeparator} />
                 <button
                   key={index}
                   name={`genre_${genre.name}`}
