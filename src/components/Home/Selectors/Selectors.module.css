@@ -21,12 +21,14 @@
   color: #2a2438;
   padding: 4.5px;
   text-align: center;
+  min-height: 4.5vh;
 }
 .button:hover {
   font-size: larger;
   border: 2px solid #2a2438;
   padding: 0px;
   cursor: pointer;
+  min-height: 4.5vh;
 }
 
 .activeButton {
@@ -35,6 +37,7 @@
   background-color: #5c5470;
   color: #dbd8e3;
   padding: 4.5px;
+  min-height: 4.5vh;
 }
 
 .activeButton:hover {
@@ -42,6 +45,7 @@
   border: 2px solid #2a2438;
   padding: 0px;
   cursor: pointer;
+  min-height: 4.5vh;
 }
 
 .originButton {
@@ -50,6 +54,7 @@
   color: #2a2438;
   padding: 5px;
   text-align: center;
+  min-height: 4.5vh;
 }
 .originButton:hover {
   font-size: larger;
@@ -58,6 +63,7 @@
   margin: 0px;
   margin-right: -3px;
   cursor: pointer;
+  min-height: 4.5vh;
 }
 
 .activeOriginButton {
@@ -66,6 +72,7 @@
   text-align: center;
   background-color: #5c5470;
   color: #dbd8e3;
+  min-height: 4.5vh;
 }
 .activeOriginButton:hover {
   font-size: larger;
@@ -73,6 +80,7 @@
   cursor: pointer;
   padding: 2.5px;
   padding-right: 5px;
+  min-height: 4.5vh;
 }
 
 .separator {

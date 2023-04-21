@@ -6,6 +6,7 @@
   padding: 0px;
   background-color: #2a2438;
   border: 1px solid black;
+  min-height: 5vh;
 }
 
 .image {

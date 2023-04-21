@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 97vh;
+  min-height: 100vh;
 
   /* background: rgb(92, 84, 112);
   background: radial-gradient(
