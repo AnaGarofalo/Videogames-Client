@@ -1,16 +1,16 @@
 .container {
-  height: 95vh;
+  height: 82vh;
   width: 70em;
 }
 
 .image {
   position: absolute;
-  top: 15em;
-  left: 45em;
+  top: 40vh;
+  left: 110vh;
 }
 
 .detailImage {
   position: absolute;
-  top: 15em;
-  left: 35em;
+  top: 40vh;
+  left: 98vh;
 }

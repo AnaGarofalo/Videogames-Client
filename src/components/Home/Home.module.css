@@ -15,6 +15,7 @@
     rgba(0, 0, 0, 0.5914740896358543) 100%
   );
   align-items: center;
+  min-height: 85vh;
 }
 .cardsAndButtons {
   display: flex;

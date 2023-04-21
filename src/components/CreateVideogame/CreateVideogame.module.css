@@ -7,10 +7,10 @@
   box-shadow: -1px -1px 82px 5px rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: -1px -1px 82px 5px rgba(255, 255, 255, 0.75);
   -moz-box-shadow: -1px -1px 82px 5px rgba(255, 255, 255, 0.75);
-
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  min-height: 95vh;
+  min-height: 85vh;
 }
 
 .columns {

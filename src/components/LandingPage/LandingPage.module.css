@@ -1,7 +1,8 @@
 .container {
-  position: absolute;
-  top: 70vh;
-  left: 67vh;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
@@ -15,6 +16,7 @@
   animation-iteration-count: infinite;
   cursor: pointer;
   z-index: 100;
+  margin-top: 45vh;
 }
 
 @keyframes button {

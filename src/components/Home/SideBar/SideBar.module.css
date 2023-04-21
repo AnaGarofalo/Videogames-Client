@@ -3,4 +3,6 @@
   flex-direction: column;
   background-color: #dbd8e3;
   border: 2px solid #2a2438;
+  min-height: 85vh;
+  align-items: stretch;
 }
