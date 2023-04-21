@@ -59,70 +59,72 @@ const CreateVideogame = () => {
   }, []);
 
   return (
-    <div className={style.container}>
-      <h1 className={style.title}>Create Videogame</h1>
-      <form onSubmit={handleSubmit}>
-        <div className={style.columns}>
-          <div className={style.column}>
-            <InputName
-              handleChange={handleChange}
-              formValues={formValues}
-              errors={errors}
-              style={style}
-            />
+    <div className={style.supraContainer}>
+      <div className={style.container}>
+        <h1 className={style.title}>Create Videogame</h1>
+        <form onSubmit={handleSubmit}>
+          <div className={style.columns}>
+            <div className={style.column}>
+              <InputName
+                handleChange={handleChange}
+                formValues={formValues}
+                errors={errors}
+                style={style}
+              />
 
-            <InputImage
-              handleChange={handleChange}
-              formValues={formValues}
-              errors={errors}
-              style={style}
-            />
+              <InputImage
+                handleChange={handleChange}
+                formValues={formValues}
+                errors={errors}
+                style={style}
+              />
 
-            <InputPlatforms
-              handleChange={handleChange}
-              formValues={formValues}
-              errors={errors}
-              style={style}
-            />
+              <InputPlatforms
+                handleChange={handleChange}
+                formValues={formValues}
+                errors={errors}
+                style={style}
+              />
 
-            <InputRating
-              handleChange={handleChange}
-              formValues={formValues}
-              errors={errors}
-              style={style}
-            />
+              <InputRating
+                handleChange={handleChange}
+                formValues={formValues}
+                errors={errors}
+                style={style}
+              />
+            </div>
+            <div className={style.column}>
+              <InputDescription
+                handleChange={handleChange}
+                formValues={formValues}
+                errors={errors}
+                style={style}
+              />
+
+              <InputReleased
+                handleChange={handleChange}
+                formValues={formValues}
+                errors={errors}
+                style={style}
+              />
+
+              <SelectGenres
+                handleChange={handleChange}
+                formValues={formValues}
+                errors={errors}
+                genres={genres}
+                style={style}
+              />
+            </div>
           </div>
-          <div className={style.column}>
-            <InputDescription
-              handleChange={handleChange}
-              formValues={formValues}
-              errors={errors}
-              style={style}
-            />
-
-            <InputReleased
-              handleChange={handleChange}
-              formValues={formValues}
-              errors={errors}
-              style={style}
-            />
-
-            <SelectGenres
-              handleChange={handleChange}
-              formValues={formValues}
-              errors={errors}
-              genres={genres}
-              style={style}
-            />
+          <div className={style.buttonContainer}>
+            <button type="submit" className={style.button}>
+              Create!
+            </button>
           </div>
-        </div>
-        <div className={style.buttonContainer}>
-          <button type="submit" className={style.button}>
-            Create!
-          </button>
-        </div>
-      </form>
-      <p className={style.generalErrors}>{errors.generalErrors}</p>
+        </form>
+        <p className={style.generalErrors}>{errors.generalErrors}</p>
+      </div>
     </div>
   );
 };

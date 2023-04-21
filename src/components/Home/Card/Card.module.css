@@ -5,7 +5,7 @@
   margin: 30px;
   position: relative;
   border: 1px solid black;
-  min-height: 50vh;
+  min-height: 40vh;
 }
 .container > .image {
   position: absolute;

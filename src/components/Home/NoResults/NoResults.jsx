@@ -22,11 +22,13 @@ function NoResults() {
     navigate("/home");
   };
   return (
-    <div className={style.container}>
-      <h1 className={style.text}>No games were found</h1>
-      <button onClick={handleClick} className={style.button}>
-        Start Again
-      </button>
+    <div className={supraContainer}>
+      <div className={style.container}>
+        <h1 className={style.text}>No games were found</h1>
+        <button onClick={handleClick} className={style.button}>
+          Start Again
+        </button>
+      </div>
     </div>
   );
 }
