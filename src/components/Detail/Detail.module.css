@@ -65,5 +65,8 @@
   padding-right: 50px;
   padding-left: 50px;
   padding-bottom: 30px;
+  justify-self: flex-start;
+  align-self: flex-start;
   text-align: justify;
+  /* margin-left: 20vh; */
 }
