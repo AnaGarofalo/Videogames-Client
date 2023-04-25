@@ -7,7 +7,6 @@ import style from "./App.module.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Created from "./components/CreateVideogame/Created/Created";
-import { useState } from "react";
 
 function App() {
   const location = useLocation();

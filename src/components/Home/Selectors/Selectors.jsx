@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearAllGames,
-  filter,
   orderByName,
   orderByRating,
   setGenreSelector,
@@ -30,7 +29,6 @@ const Selectors = ({ genres }) => {
     if (order.includes("To"))
       dispatch(orderByName(order, genreSelector, originSelector));
     else dispatch(orderByRating(order, genreSelector, originSelector));
-    // dispatch(filter(genreSelector, originSelector));
     dispatch(setPageNumber(1));
   }, [genreSelector, originSelector]);
   return (

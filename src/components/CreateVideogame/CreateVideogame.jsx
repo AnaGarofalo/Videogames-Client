@@ -18,6 +18,7 @@ const CreateVideogame = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //*estado con los valores del formulario
   const [formValues, setFormValues] = useState({
     name: "",
     image: "",
@@ -30,6 +31,7 @@ const CreateVideogame = () => {
     genre3: "None",
   });
 
+  //* estado con los errores del formulario
   const [errors, setErrors] = useState({
     name: "",
     image: "",
@@ -41,6 +43,7 @@ const CreateVideogame = () => {
     generalErrors: "",
   });
 
+  //*maneja el cambio en cualquiera de los inputs del formulario y los valida
   const handleChange = (event) => {
     const property = event.target.name;
     const value = event.target.value;
@@ -48,11 +51,13 @@ const CreateVideogame = () => {
     setErrors(validate({ ...formValues, [property]: value }));
   };
 
+  //* llama a la función que crea el juego
   const handleSubmit = (event) => {
     event.preventDefault();
     handleCreateGame(formValues, errors, setErrors, navigate);
   };
 
+  //* trae los géneros necesarios para los selects y setea el estado de errores
   useEffect(() => {
     dispatch(getGenres());
     setErrors(validate(formValues));

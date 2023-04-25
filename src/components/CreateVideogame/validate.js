@@ -19,10 +19,10 @@ const validate = ({
     genres: "",
   };
 
+  //* primero chequea si los campos están vacíos
   errors.name = name.length ? "" : "Enter name";
   errors.image = image.length ? "" : "Enter image";
   errors.platforms = platforms.length ? "" : "Enter platforms";
-
   errors.description = description.length ? "" : "Enter description";
   errors.description =
     description.length > 255 ? "Description too long" : errors.description;
@@ -36,12 +36,15 @@ const validate = ({
 
   errors.genres =
     emptyGenres > 2 ? "Videogame must have at least one genre" : "";
+
+  //*chequea que no haya géneros repetidos
   if (
     emptyGenres < 2 &&
     (genre1 === genre2 || genre1 === genre3 || genre2 === genre3)
   )
     errors.genres = "Can't choose the same game twice";
 
+  //*chequea que rating sea un número y que sea menor a 5
   errors.rating = rating.length ? "" : "Enter rating";
   rating = Number(rating);
   errors.rating =

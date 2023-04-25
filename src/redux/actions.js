@@ -13,6 +13,7 @@ export const SET_ORDER = "SET_ORDER";
 export const SET_PAGE_NUMBER = "SET_PAGE_NUMBER";
 export const CLEAR_ALL_GAMES = "CLEAR_ALL_GAMES;";
 
+//* trae todos los juegos
 export const getAllGames = () => {
   return async (dispatch) => {
     try {
@@ -25,6 +26,7 @@ export const getAllGames = () => {
   };
 };
 
+//* trae los juegos según nombre
 export const getGamesByName = (name) => {
   return async (dispatch) => {
     try {
@@ -52,6 +54,7 @@ export const getGamesByName = (name) => {
 //   };
 // };
 
+//* filtra y ordena los juegos según raiting
 export const orderByRating = (selector, genre, origin) => {
   return async function (dispatch) {
     try {
@@ -83,6 +86,7 @@ export const orderByRating = (selector, genre, origin) => {
   };
 };
 
+//*filtra y ordena los juegos según nombre
 export const orderByName = (selector, genre, origin) => {
   return async function (dispatch) {
     try {
@@ -115,6 +119,7 @@ export const orderByName = (selector, genre, origin) => {
   };
 };
 
+//*trae todos los géneros
 export const getGenres = () => {
   return async (dispatch) => {
     try {
@@ -127,22 +132,27 @@ export const getGenres = () => {
   };
 };
 
+//*setea el estado origin (filtro)
 export const setOriginSelector = (origin) => {
   return { type: SET_ORIGIN_SELECTOR, payload: origin };
 };
 
+//*setea el estado género (filtro)
 export const setGenreSelector = (genre) => {
   return { type: SET_GENRE_SELECTOR, payload: genre };
 };
 
+//*setea el estado orden
 export const setOrder = (order) => {
   return { type: SET_ORDER, payload: order };
 };
 
+//*setea el n° de pagina
 export const setPageNumber = (pageNumber) => {
   return { type: SET_PAGE_NUMBER, payload: pageNumber };
 };
 
+//* limpia el estado allGames
 export const clearAllGames = () => {
   return { type: CLEAR_ALL_GAMES };
 };

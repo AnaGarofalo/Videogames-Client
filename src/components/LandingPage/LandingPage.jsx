@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./LandingPage.module.css";
 import { Navigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { getAllGames } from "../../redux/actions";
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -10,6 +12,9 @@ class LandingPage extends React.Component {
   handleClick = () => {
     this.setState({ loggin: true });
   };
+  componentDidMount() {
+    this.props.getAllGames();
+  }
 
   render() {
     return (
@@ -23,4 +28,10 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getAllGames: () => dispatch(getAllGames()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(LandingPage);

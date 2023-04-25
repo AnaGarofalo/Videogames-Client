@@ -24,19 +24,21 @@ const handleCreateGame = async (
     return;
   }
 
+  //pasa platforms a un array
   platforms = [platforms];
 
+  //pasa a mayúscula la primera letra del nombre
   const firstLetter = name[0];
   name = name.replace(firstLetter, firstLetter.toUpperCase());
 
+  //los input vienen como string, así que pasa el rating a number
   rating = Number(rating);
 
+  //crea el array de genres
   const genres = [];
   if (genre1 !== "None") genres.push(genre1);
   if (genre2 !== "None") genres.push(genre2);
   if (genre3 !== "None") genres.push(genre3);
-
-  description = String(description);
 
   const newGame = {
     name,
