@@ -88,11 +88,9 @@ export const filterAndOrder = (order, genre, origin, backupGames) => {
     games = games.filter((game) => game.origin === origin);
   }
 
-  //*chequea que queden juegos y si hace falta ordenarlos
+  //*chequea que queden juegos
   if (!games.length)
     return { type: FILTER_AND_ORDER, payload: { message: "No results" } };
-
-  // if (order === "none") return { type: FILTER_AND_ORDER, payload: games };
 
   return { type: FILTER_AND_ORDER, payload: games };
 };
@@ -108,71 +106,6 @@ export const getGamesByName = (name) => {
     }
   };
 };
-
-// //* filtra y ordena los juegos según raiting
-// export const orderByRating = (selector, genre, origin) => {
-//   return async function (dispatch) {
-//     try {
-//       const gamesData = await axios.get(
-//         `${URL_BASE}/videogames/selectors?genre=${genre}&origin=${origin}`
-//       );
-//       let games = gamesData.data;
-//       if (!Array.isArray(games)) {
-//         dispatch({ type: ORDER_BY_NAME, payload: games });
-//         return;
-//       }
-
-//       if (selector === "ascendant") {
-//         games = games.sort((game1, game2) => {
-//           if (game1.rating > game2.rating) return 1;
-//           if (game1.rating < game2.rating) return -1;
-//           return 0;
-//         });
-//       } else if (selector === "descendant") {
-//         games = games.sort((game1, game2) => {
-//           return game2.rating - game1.rating;
-//         });
-//       }
-
-//       dispatch({ type: ORDER_BY_RATING, payload: games });
-//     } catch (error) {
-//       window.alert(error.message);
-//     }
-//   };
-// };
-
-// //*filtra y ordena los juegos según nombre
-// export const orderByName = (selector, genre, origin) => {
-//   return async function (dispatch) {
-//     try {
-//       const gamesData = await axios.get(
-//         `${URL_BASE}/videogames/selectors?genre=${genre}&origin=${origin}`
-//       );
-//       let games = gamesData.data;
-//       if (!Array.isArray(games)) {
-//         dispatch({ type: ORDER_BY_NAME, payload: games });
-//         return;
-//       }
-
-//       if (selector === "aToZ") {
-//         games = games.sort((game1, game2) => {
-//           if (game1.name > game2.name) return 1;
-//           if (game1.name < game2.name) return -1;
-//           return 0;
-//         });
-//       } else if (selector === "zToA") {
-//         games = games.sort((game1, game2) => {
-//           if (game1.name < game2.name) return 1;
-//           if (game1.name > game2.name) return -1;
-//           return 0;
-//         });
-//       }
-//       dispatch({ type: ORDER_BY_NAME, payload: games });
-//     } catch (error) {
-//       window.alert(error.message);
-//     }
-//   };
-// };
 
 //*trae todos los géneros
 export const getGenres = () => {
@@ -211,3 +144,68 @@ export const setPageNumber = (pageNumber) => {
 export const clearAllGames = () => {
   return { type: CLEAR_ALL_GAMES };
 };
+
+// //* filtra y ordena los juegos según raiting en el back
+// export const orderByRating = (selector, genre, origin) => {
+//   return async function (dispatch) {
+//     try {
+//       const gamesData = await axios.get(
+//         `${URL_BASE}/videogames/selectors?genre=${genre}&origin=${origin}`
+//       );
+//       let games = gamesData.data;
+//       if (!Array.isArray(games)) {
+//         dispatch({ type: ORDER_BY_NAME, payload: games });
+//         return;
+//       }
+
+//       if (selector === "ascendant") {
+//         games = games.sort((game1, game2) => {
+//           if (game1.rating > game2.rating) return 1;
+//           if (game1.rating < game2.rating) return -1;
+//           return 0;
+//         });
+//       } else if (selector === "descendant") {
+//         games = games.sort((game1, game2) => {
+//           return game2.rating - game1.rating;
+//         });
+//       }
+
+//       dispatch({ type: ORDER_BY_RATING, payload: games });
+//     } catch (error) {
+//       window.alert(error.message);
+//     }
+//   };
+// };
+
+// //*filtra y ordena los juegos según nombre en el back
+// export const orderByName = (selector, genre, origin) => {
+//   return async function (dispatch) {
+//     try {
+//       const gamesData = await axios.get(
+//         `${URL_BASE}/videogames/selectors?genre=${genre}&origin=${origin}`
+//       );
+//       let games = gamesData.data;
+//       if (!Array.isArray(games)) {
+//         dispatch({ type: ORDER_BY_NAME, payload: games });
+//         return;
+//       }
+
+//       if (selector === "aToZ") {
+//         games = games.sort((game1, game2) => {
+//           if (game1.name > game2.name) return 1;
+//           if (game1.name < game2.name) return -1;
+//           return 0;
+//         });
+//       } else if (selector === "zToA") {
+//         games = games.sort((game1, game2) => {
+//           if (game1.name < game2.name) return 1;
+//           if (game1.name > game2.name) return -1;
+//           return 0;
+//         });
+//       }
+//       dispatch({ type: ORDER_BY_NAME, payload: games });
+//     } catch (error) {
+//       window.alert(error.message);
+//     }
+//   };
+// };
