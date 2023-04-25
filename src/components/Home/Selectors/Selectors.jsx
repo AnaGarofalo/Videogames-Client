@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearAllGames,
+  filterAndOrder,
   orderByName,
   orderByRating,
   setGenreSelector,
@@ -8,12 +9,12 @@ import {
 } from "../../../redux/actions";
 import { useEffect } from "react";
 import style from "./Selectors.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { setPageNumber } from "../../../redux/actions";
 
 const Selectors = ({ genres }) => {
   const dispatch = useDispatch();
-  const location = useLocation();
+  const backupGames = useSelector((state) => state.backupGames);
   const originSelector = useSelector((state) => state.originSelector);
   const genreSelector = useSelector((state) => state.genreSelector);
   const order = useSelector((state) => state.order);
@@ -25,12 +26,12 @@ const Selectors = ({ genres }) => {
   };
 
   useEffect(() => {
-    if (location.pathname !== "/searchResults") dispatch(clearAllGames());
-    if (order.includes("To"))
-      dispatch(orderByName(order, genreSelector, originSelector));
-    else dispatch(orderByRating(order, genreSelector, originSelector));
+    if (backupGames.length)
+      dispatch(
+        filterAndOrder(order, genreSelector, originSelector, backupGames)
+      );
     dispatch(setPageNumber(1));
-  }, [genreSelector, originSelector]);
+  }, [genreSelector, originSelector, order]);
   return (
     <div className={style.selectorContainer}>
       <hr className={style.separator} />

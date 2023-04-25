@@ -1,11 +1,12 @@
 import {
   CLEAR_ALL_GAMES,
-  FILTER,
+  FILTER_AND_ORDER,
   GET_ALL_GAMES,
   GET_GAMES_BY_NAME,
   GET_GENRES,
   ORDER_BY_NAME,
   ORDER_BY_RATING,
+  RESET_GAMES,
   SET_GENRE_SELECTOR,
   SET_ORDER,
   SET_ORIGIN_SELECTOR,
@@ -13,6 +14,7 @@ import {
 } from "./actions";
 
 const initialState = {
+  backupGames: [],
   games: [],
   genres: [],
   originSelector: "all",
@@ -24,12 +26,15 @@ const initialState = {
 export const rootReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_ALL_GAMES:
+      return { ...state, games: payload, backupGames: payload };
+
+    case RESET_GAMES:
+      return { ...state, games: payload };
+
+    case FILTER_AND_ORDER:
       return { ...state, games: payload };
 
     case GET_GAMES_BY_NAME:
-      return { ...state, games: payload };
-
-    case FILTER:
       return { ...state, games: payload };
 
     case ORDER_BY_RATING:
@@ -54,6 +59,7 @@ export const rootReducer = (state = initialState, { type, payload }) => {
       return { ...state, pageNumber: payload };
 
     case CLEAR_ALL_GAMES:
+      console.log("estoy en el reducer");
       return { ...state, games: [] };
 
     default:

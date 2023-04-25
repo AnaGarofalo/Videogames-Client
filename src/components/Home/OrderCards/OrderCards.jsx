@@ -1,22 +1,37 @@
 import { useDispatch, useSelector } from "react-redux";
-import { orderByRating, orderByName, setOrder } from "../../../redux/actions";
+import {
+  clearAllGames,
+  resetGames,
+  setGenreSelector,
+  setOrder,
+  setOriginSelector,
+} from "../../../redux/actions";
 import style from "./OrderCards.module.css";
+import { useNavigate } from "react-router-dom";
 
 const OrderCards = () => {
   const dispatch = useDispatch();
-  const originSelector = useSelector((state) => state.originSelector);
-  const genreSelector = useSelector((state) => state.genreSelector);
+  const navigate = useNavigate();
+  const backupGames = useSelector((state) => state.backupGames);
 
   const handleChange = (event) => {
     const name = event.target.value;
     dispatch(setOrder(name));
-    if (name.includes("To"))
-      dispatch(orderByName(name, genreSelector, originSelector));
-    else dispatch(orderByRating(name, genreSelector, originSelector));
+  };
+  const handleReset = () => {
+    dispatch(clearAllGames());
+    dispatch(setOrder("none"));
+    dispatch(setGenreSelector("all"));
+    dispatch(setOriginSelector("all"));
+    dispatch(resetGames(backupGames));
+    navigate("/home");
   };
 
   return (
     <div className={style.selectorContainer}>
+      <button onClick={handleReset} className={style.button}>
+        Reset
+      </button>
       <div className={style.selector}>
         <a>Order:</a>
         <select
