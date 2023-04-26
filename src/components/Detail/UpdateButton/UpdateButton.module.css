@@ -18,3 +18,17 @@
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.miniButton {
+  all: unset;
+  padding: 5px;
+  padding-top: 10px;
+  z-index: 100;
+}
+.icon {
+  height: 20px;
+}
+.miniButton:hover .icon {
+  height: 30px;
+  cursor: pointer;
+}

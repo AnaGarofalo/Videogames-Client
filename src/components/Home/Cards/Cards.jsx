@@ -27,6 +27,7 @@ const Cards = ({ pageGames, setPageGames, gamesPerPage }) => {
             genres={game.genres}
             image={game.background_image}
             key={game.id}
+            origin={game.origin}
           />
         ))
       ) : (

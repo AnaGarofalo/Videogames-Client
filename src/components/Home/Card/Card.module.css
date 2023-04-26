@@ -42,15 +42,15 @@
 
 .nameContainer {
   width: 250px;
-  height: 250px;
   position: absolute;
   margin: 0px;
   bottom: 0px;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   font-size: large;
+  background-color: rgba(240, 248, 255, 0.473);
 }
 .name {
   margin: 0px;
@@ -61,7 +61,6 @@
   justify-content: center;
   width: 20em;
   color: #2a2438;
-  background-color: rgba(240, 248, 255, 0.473);
 }
 
 .container:hover {
@@ -82,4 +81,13 @@
 
 .container:hover .genreContainer {
   visibility: visible;
+}
+
+.link {
+  text-decoration: none;
+  color: #2a2438;
+}
+
+.name:hover {
+  font-size: 1.4em;
 }
