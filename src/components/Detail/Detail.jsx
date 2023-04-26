@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import getGameData from "./getGameData";
 import style from "./Detail.module.css";
 import detail_name from "../../utils/detail_name.png";
@@ -9,13 +9,16 @@ import detail_platforms from "../../utils/detail_platforms.png";
 import detail_rating from "../../utils/detail_rating.png";
 import detail_released from "../../utils/detail_released.png";
 import Loading from "../Home/Loading/Loading";
+import UpdateButton from "./UpdateButton/UpdateButton";
+import DeleteButton from "./DeleteButton/DeleteButton";
 
 function Detail() {
   const { id } = useParams();
   const [game, setGame] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
-    getGameData(id, setGame);
+    getGameData(id, setGame, navigate);
   }, []);
 
   return (
@@ -69,12 +72,22 @@ function Detail() {
                 </h4>
                 <p className={style.text}>{game.genres}</p>
               </div>
-              <div className={style.imgContainer}>
-                <img
-                  src={game.background_image}
-                  className={style.image}
-                  alt="gameImage"
-                />
+              <div className={style.buttonsAndImageContainer}>
+                {game.origin === "database" ? (
+                  <div className={style.buttonContainer}>
+                    <UpdateButton id={game.id} />
+                    <DeleteButton id={game.id} />
+                  </div>
+                ) : (
+                  ""
+                )}
+                <div className={style.imgContainer}>
+                  <img
+                    src={game.background_image}
+                    className={style.image}
+                    alt="gameImage"
+                  />
+                </div>
               </div>
             </div>
             <div className={style.descriptionContainer}>

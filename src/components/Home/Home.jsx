@@ -4,10 +4,9 @@ import PagesNavBar from "./PagesNavBar/PagesNavBar";
 import { useDispatch, useSelector } from "react-redux";
 import SideBar from "./SideBar/SideBar";
 import style from "./Home.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ButtonNext from "./ButtonNext/ButtonNext";
 import ButtonPrev from "./ButtonPrev/ButtonPrev";
-import NoResults from "./NoResults/NoResults";
 import { getAllGames } from "../../redux/actions";
 
 function Home() {
@@ -15,6 +14,7 @@ function Home() {
   const [pageGames, setPageGames] = useState([]);
   const [pages, setPages] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const gamesPerPage = location.pathname === "/home" ? 6 : 8;
 
@@ -25,7 +25,7 @@ function Home() {
   return (
     <div>
       {!Array.isArray(allGames) ? (
-        <NoResults />
+        navigate("/noResults")
       ) : (
         <>
           <div className={style.bigContainer}>

@@ -2,21 +2,23 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGenres } from "../../redux/actions";
 import validate from "./validate";
-import handleCreateGame from "./handleCreateGame";
-import InputName from "./InputName/InputName";
-import InputImage from "./InputImage/InputImage";
-import InputPlatforms from "./InputPlatforms/InputPlatforms";
-import InputRating from "./InputRating/InputRating";
-import InputDescription from "./InputDescription/InputDescription";
-import InputReleased from "./InputReleased/InputReleased";
-import SelectGenres from "./SelectGenres/SelectGenres";
-import style from "./CreateVideogame.module.css";
-import { useNavigate } from "react-router-dom";
+import handleUpdateGame from "./handleUpdateGame";
+import InputName from "../CreateVideogame/InputName/InputName";
+import InputImage from "../CreateVideogame/InputImage/InputImage";
+import InputPlatforms from "../CreateVideogame/InputPlatforms/InputPlatforms";
+import InputRating from "../CreateVideogame/InputRating/InputRating";
+import InputDescription from "../CreateVideogame/InputDescription/InputDescription";
+import InputReleased from "../CreateVideogame/InputReleased/InputReleased";
+import SelectGenres from "../CreateVideogame/SelectGenres/SelectGenres";
+import style from "./UpdateGame.module.css";
+import { useNavigate, useParams } from "react-router-dom";
+import getGameData from "./getGameData";
 
-const CreateVideogame = () => {
+const UpdateGame = () => {
   const genres = useSelector((state) => state.genres);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { id } = useParams();
 
   //*estado con los valores del formulario
   const [formValues, setFormValues] = useState({
@@ -54,13 +56,14 @@ const CreateVideogame = () => {
   //* llama a la función que crea el juego
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleCreateGame(formValues, errors, setErrors, navigate, dispatch);
+    handleUpdateGame(formValues, errors, setErrors, navigate, dispatch, id);
   };
 
   //* trae los géneros necesarios para los selects y setea el estado de errores
   useEffect(() => {
     dispatch(getGenres());
-    setErrors(validate(formValues));
+    const newGame = getGameData(id, navigate, setFormValues);
+    // setErrors(validate(newGame));
   }, []);
 
   return (
@@ -124,7 +127,7 @@ const CreateVideogame = () => {
           </div>
           <div className={style.buttonContainer}>
             <button type="submit" className={style.button}>
-              Create!
+              Update!
             </button>
           </div>
         </form>
@@ -133,4 +136,4 @@ const CreateVideogame = () => {
     </div>
   );
 };
-export default CreateVideogame;
+export default UpdateGame;

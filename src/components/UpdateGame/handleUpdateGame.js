@@ -2,7 +2,7 @@ import axios from "axios";
 import { URL_BASE } from "../../utils/vars";
 import { getAllGames } from "../../redux/actions";
 
-const handleCreateGame = async (
+const handleUpdateGame = async (
   {
     name,
     image,
@@ -17,7 +17,8 @@ const handleCreateGame = async (
   errors,
   setErrors,
   navigate,
-  dispatch
+  dispatch,
+  id
 ) => {
   //para comprobar si hay errores, ordena el array con valores del objeto errors de manera que
   //queden en último lugar los strings que contienen caracteres
@@ -58,13 +59,14 @@ const handleCreateGame = async (
     const oldGames = response.data;
     let alredyExistent = false;
     oldGames.forEach((game) => {
-      if (game.name.toLowerCase() === name.toLowerCase()) alredyExistent = true;
+      if (game.name.toLowerCase() === name.toLowerCase() && game.id !== id)
+        alredyExistent = true;
     });
     if (alredyExistent)
       setErrors({ ...errors, generalErrors: "Videogame alredy exists" });
     else {
-      axios.post(`${URL_BASE}/videogames`, newGame);
-      navigate("/created");
+      await axios.put(`${URL_BASE}/videogames/put/${id}`, newGame);
+      navigate("/updated");
       dispatch(getAllGames());
     }
   } catch (error) {
@@ -72,4 +74,4 @@ const handleCreateGame = async (
   }
 };
 
-export default handleCreateGame;
+export default handleUpdateGame;

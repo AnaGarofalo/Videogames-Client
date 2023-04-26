@@ -6,7 +6,8 @@ import CreateVideogame from "./components/CreateVideogame/CreateVideogame";
 import style from "./App.module.css";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import Created from "./components/CreateVideogame/Created/Created";
+import Message from "./components/Home/Message/Message";
+import UpdateGame from "./components/UpdateGame/UpdateGame";
 
 function App() {
   const location = useLocation();
@@ -21,8 +22,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/createVideogame" element={<CreateVideogame />} />
+        <Route path="/update/:id" element={<UpdateGame />} />
         <Route path="/searchResults" element={<Home />} />
-        <Route path="/created" element={<Created />} />
+        <Route path="/created" element={<Message />} />
+        <Route path="/updated" element={<Message />} />
+        <Route path="/deleted" element={<Message />} />
+        <Route path="/noResults" element={<Message />} />
       </Routes>
       {pathname === "/" ? "" : <Footer />}
     </div>
