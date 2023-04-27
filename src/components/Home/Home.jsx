@@ -19,7 +19,12 @@ function Home() {
   const gamesPerPage = 6;
 
   useEffect(() => {
-    if (Array.isArray(allGames) && !allGames.length) dispatch(getAllGames());
+    if (
+      Array.isArray(allGames) &&
+      !allGames.length &&
+      location.pathname !== "/searchResults"
+    )
+      dispatch(getAllGames());
     return () => {
       if (location.pathname === "/searchResults") {
         dispatch(resetGames());
