@@ -8,18 +8,21 @@ import {
   setOriginSelector,
 } from "../../../redux/actions";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Message() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleClick = () => {
+  useEffect(() => {
     dispatch(clearAllGames());
     dispatch(setOrder("none"));
     dispatch(setGenreSelector("all"));
     dispatch(setOriginSelector("all"));
     dispatch(getAllGames());
+  }, []);
+  const handleClick = () => {
     navigate("/home");
   };
   return (

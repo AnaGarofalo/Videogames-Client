@@ -9,7 +9,8 @@ async function handleClick(id, navigate, dispatch) {
     );
     console.log(deleted.data);
     if (deleted.data.deleted) {
-      dispatch(getAllGames());
+      //* el dispatch lo hace el componente "Messages"
+      // dispatch(getAllGames());
       navigate("/deleted");
     } else window.alert("Failed to delete");
   } catch (error) {

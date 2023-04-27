@@ -1,0 +1,9 @@
+.notFound {
+  height: 75vh;
+  margin: 3vh;
+  align-self: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}

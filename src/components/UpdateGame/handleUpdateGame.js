@@ -67,7 +67,8 @@ const handleUpdateGame = async (
     else {
       await axios.put(`${URL_BASE}/videogames/put/${id}`, newGame);
       navigate("/updated");
-      dispatch(getAllGames());
+      //* el dispatch lo hace el componente "Messages"
+      // dispatch(getAllGames());
     }
   } catch (error) {
     window.alert(error.message);

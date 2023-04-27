@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Message from "./components/Home/Message/Message";
 import UpdateGame from "./components/UpdateGame/UpdateGame";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
         <Route path="/updated" element={<Message />} />
         <Route path="/deleted" element={<Message />} />
         <Route path="/noResults" element={<Message />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {pathname === "/" ? "" : <Footer />}
     </div>

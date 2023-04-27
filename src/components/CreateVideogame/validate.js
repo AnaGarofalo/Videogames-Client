@@ -37,6 +37,12 @@ const validate = ({
   errors.genres =
     emptyGenres > 2 ? "Videogame must have at least one genre" : "";
 
+  //*chequea si los inputs se excedieron en el largo
+  if (name.length > 255) errors.name = "Name too long";
+  if (image.length > 255) errors.image = "Image too long";
+  if (platforms.length > 255) errors.platforms = "Platforms too long";
+  if (description.length > 255) errors.description = "Description too long";
+
   //*chequea que no haya géneros repetidos
   if (
     emptyGenres < 2 &&
@@ -51,6 +57,8 @@ const validate = ({
     String(rating) === "NaN" ? "Rating must be a number" : errors.rating;
 
   errors.rating = rating > 5 ? "Rating must be under 5" : errors.rating;
+  errors.rating =
+    rating < 0 ? "Rating must be a positive number" : errors.rating;
 
   //checking date
   if (!released) return errors;

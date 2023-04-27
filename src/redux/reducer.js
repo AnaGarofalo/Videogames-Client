@@ -59,8 +59,7 @@ export const rootReducer = (state = initialState, { type, payload }) => {
       return { ...state, pageNumber: payload };
 
     case CLEAR_ALL_GAMES:
-      console.log("estoy en el reducer");
-      return { ...state, games: [] };
+      return { ...state, games: [], backupGames: [] };
 
     default:
       return { ...state };

@@ -57,15 +57,19 @@ const handleCreateGame = async (
     const response = await axios.get(`${URL_BASE}/videogames?name=${name}`);
     const oldGames = response.data;
     let alredyExistent = false;
-    oldGames.forEach((game) => {
-      if (game.name.toLowerCase() === name.toLowerCase()) alredyExistent = true;
-    });
+
+    oldGames.length &&
+      oldGames.forEach((game) => {
+        if (game.name.toLowerCase() === name.toLowerCase())
+          alredyExistent = true;
+      });
     if (alredyExistent)
       setErrors({ ...errors, generalErrors: "Videogame alredy exists" });
     else {
-      axios.post(`${URL_BASE}/videogames`, newGame);
+      await axios.post(`${URL_BASE}/videogames`, newGame);
       navigate("/created");
-      dispatch(getAllGames());
+      //* el dispatch lo hace el componente "Messages"
+      // dispatch(getAllGames());
     }
   } catch (error) {
     window.alert(error.message);
