@@ -7,7 +7,7 @@ import style from "./Home.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import ButtonNext from "./ButtonNext/ButtonNext";
 import ButtonPrev from "./ButtonPrev/ButtonPrev";
-import { getAllGames } from "../../redux/actions";
+import { getAllGames, resetGames } from "../../redux/actions";
 
 function Home() {
   const allGames = useSelector((state) => state.games);
@@ -16,10 +16,15 @@ function Home() {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const gamesPerPage = location.pathname === "/home" ? 6 : 8;
+  const gamesPerPage = 6;
 
   useEffect(() => {
     if (Array.isArray(allGames) && !allGames.length) dispatch(getAllGames());
+    return () => {
+      if (location.pathname === "/searchResults") {
+        dispatch(resetGames());
+      }
+    };
   }, []);
 
   return (

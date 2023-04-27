@@ -1,5 +1,6 @@
 import {
   CLEAR_ALL_GAMES,
+  CLEAR_GAMES,
   FILTER_AND_ORDER,
   GET_ALL_GAMES,
   GET_GAMES_BY_NAME,
@@ -60,6 +61,9 @@ export const rootReducer = (state = initialState, { type, payload }) => {
 
     case CLEAR_ALL_GAMES:
       return { ...state, games: [], backupGames: [] };
+
+    case CLEAR_GAMES:
+      return { ...state, games: [] };
 
     default:
       return { ...state };

@@ -13,6 +13,7 @@ export const SET_GENRE_SELECTOR = "SET_GENRE_SELECTOR";
 export const SET_ORDER = "SET_ORDER";
 export const SET_PAGE_NUMBER = "SET_PAGE_NUMBER";
 export const CLEAR_ALL_GAMES = "CLEAR_ALL_GAMES";
+export const CLEAR_GAMES = "CLEAR_GAMES";
 
 //* trae todos los juegos
 export const getAllGames = () => {
@@ -140,9 +141,14 @@ export const setPageNumber = (pageNumber) => {
   return { type: SET_PAGE_NUMBER, payload: pageNumber };
 };
 
-//* limpia el estado allGames
+//* limpia los dos estados globales
 export const clearAllGames = () => {
   return { type: CLEAR_ALL_GAMES };
+};
+
+//* limpia el estado games
+export const clearGames = () => {
+  return { type: CLEAR_GAMES };
 };
 
 // //* filtra y ordena los juegos según raiting en el back
