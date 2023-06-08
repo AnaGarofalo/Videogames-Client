@@ -27,8 +27,8 @@ describe(Footer, () => {
         <Footer />
       </BrowserRouter>
     );
-    const div = screen.getByTestId("createdBy");
-    expect(div).toBeInTheDocument();
+    const element = screen.getByTestId("createdBy");
+    expect(element).toBeInTheDocument();
   });
 });
 
@@ -39,8 +39,8 @@ describe(Footer, () => {
         <Footer />
       </BrowserRouter>
     );
-    const div = screen.getByTestId("linkedin");
-    expect(div).toBeInTheDocument();
+    const element = screen.getByTestId("linkedin");
+    expect(element).toBeInTheDocument();
   });
 });
 
@@ -51,7 +51,7 @@ describe(Footer, () => {
         <Footer />
       </BrowserRouter>
     );
-    const div = screen.getByTestId("github");
-    expect(div).toBeInTheDocument();
+    const element = screen.getByTestId("github");
+    expect(element).toBeInTheDocument();
   });
 });

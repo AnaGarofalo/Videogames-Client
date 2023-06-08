@@ -9,10 +9,6 @@ const Cards = ({ pageGames, setPageGames, gamesPerPage }) => {
   const allGames = useSelector((state) => state.games);
   const pageNumber = useSelector((state) => state.pageNumber);
 
-  // useEffect(async () => {
-  //   if (location.pathname !== "/searchResults" && !allGames.length)
-  //     await dispatch(getAllGames());
-  // }, []);
   useEffect(() => {
     setPageGames(getPageGames(pageNumber, allGames, gamesPerPage));
   }, [allGames, pageNumber]);

@@ -11,6 +11,7 @@ function DeleteButton(id) {
 
   return (
     <div className={style.container}>
+      {/* hay dos botones distintos, uno para el detail y otro para las cards */}
       {location.pathname.includes("detail") ? (
         <button
           className={style.button}

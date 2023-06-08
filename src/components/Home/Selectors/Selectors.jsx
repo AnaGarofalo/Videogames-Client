@@ -1,15 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  clearAllGames,
   filterAndOrder,
-  orderByName,
-  orderByRating,
   setGenreSelector,
   setOriginSelector,
 } from "../../../redux/actions";
 import { useEffect } from "react";
 import style from "./Selectors.module.css";
-import { useLocation, useNavigate } from "react-router-dom";
 import { setPageNumber } from "../../../redux/actions";
 
 const Selectors = ({ genres }) => {
@@ -26,6 +22,7 @@ const Selectors = ({ genres }) => {
   };
 
   useEffect(() => {
+    //* sin la condición, se dispara al renderizarse la página y da error porque no tiene backupGames
     if (backupGames.length)
       dispatch(
         filterAndOrder(order, genreSelector, originSelector, backupGames)

@@ -11,6 +11,7 @@ const NameSearch = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //*es un mini formulario controlado
   const handleChange = (event) => {
     setName(event.target.value);
   };

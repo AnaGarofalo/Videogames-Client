@@ -7,7 +7,6 @@ async function handleClick(id, navigate, dispatch) {
     const deleted = await axios.delete(
       `${URL_BASE}/videogames/delete/${id.id}`
     );
-    console.log(deleted.data);
     if (deleted.data.deleted) {
       //* el dispatch lo hace el componente "Messages"
       // dispatch(getAllGames());

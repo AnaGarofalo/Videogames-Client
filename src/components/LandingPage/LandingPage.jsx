@@ -9,9 +9,13 @@ class LandingPage extends React.Component {
     super(props);
     this.state = { loggin: false };
   }
+
+  //* para disparar el componente Navigate
   handleClick = () => {
     this.setState({ loggin: true });
   };
+
+  //* se traen los juegos desde que se llega a la landing page para ahorrar tiempo de espera
   componentDidMount() {
     this.props.getAllGames();
   }

@@ -20,11 +20,14 @@ function Home() {
 
   useEffect(() => {
     if (
+      //* si llega al home y no hay juegos (pero sí es un array, es decir que no es que se haya hecho una búsqueda)
       Array.isArray(allGames) &&
       !allGames.length &&
       location.pathname !== "/searchResults"
     )
       dispatch(getAllGames());
+
+    //*al desmontarse deja de renderizar los juegos que se buscaron x nombre y vuelve a los del home
     return () => {
       if (location.pathname === "/searchResults") {
         dispatch(resetGames());
@@ -34,6 +37,9 @@ function Home() {
 
   return (
     <div>
+      {/* si allGames no es un array, es porque se hizo una búsqueda que no
+      arrojó ningún resultado, de esta forma se diferencia del array vacío
+      que es cuando se están esperando los datos de la api */}
       {!Array.isArray(allGames) ? (
         navigate("/noResults")
       ) : (

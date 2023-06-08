@@ -17,6 +17,7 @@ const OrderCards = () => {
   const handleChange = (event) => {
     const name = event.target.value;
     dispatch(setOrder(name));
+    //dispara el useEffect del componente Selectors
   };
   const handleReset = () => {
     dispatch(clearAllGames());
@@ -32,6 +33,7 @@ const OrderCards = () => {
       <button onClick={handleReset} className={style.button}>
         Reset
       </button>
+
       <div className={style.selector}>
         <a>Order:</a>
         <select

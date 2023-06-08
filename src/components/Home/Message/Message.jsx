@@ -15,6 +15,8 @@ function Message() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  //* como después de esta página siempre se redirige al home y hace falta actualizar los juegos,
+  //* lo hace desde que se carga el componente para ahorrar tiempo
   useEffect(() => {
     dispatch(clearAllGames());
     dispatch(setOrder("none"));
@@ -22,9 +24,11 @@ function Message() {
     dispatch(setOriginSelector("all"));
     dispatch(getAllGames());
   }, []);
+
   const handleClick = () => {
     navigate("/home");
   };
+
   return (
     <div className={style.supraContainer}>
       <div className={style.container}>
